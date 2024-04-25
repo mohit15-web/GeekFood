@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
@@ -7,12 +8,25 @@ function Navbar() {
             <img src="https://flowbite.com/docs/images/logo.svg" alt="logo" />
             <h1 className='text-2xl font-semibold'>GeekFoods</h1>
         </div>
-        <div className='cursor-pointer flex justify-center items-center gap-6 text-[1.1rem] font-semibold'>
-            <h1 className=' text-blue-600'>Home</h1>
-            <h1>Quote</h1>
-            <h1>Restaurants</h1>
-            <h1>Foods</h1>
+        <div className='hidden cursor-pointer justify-center items-center gap-6 text-[1.1rem] font-semibold 2xl:flex'>
+          <Link to="/">
+          <h1 className=' text-blue-600'>Home</h1>
+          
+          </Link>
+          <Link to="/quote">
+          <h1>Quote</h1>
+          </Link>
+          <Link to="/restaurant">
+          <h1>Restaurants</h1>
+          
+          </Link>
+          <Link to="/foods">
+          <h1>Foods</h1>
+          
+          </Link>
+            <Link to="/contact">
             <h1>Contact</h1>
+            </Link>
         </div>
 
         <button
