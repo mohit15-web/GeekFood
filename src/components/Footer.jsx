@@ -7,7 +7,7 @@ import { FaFacebook,
 
 function Footer() {
   return (
-    <div className="w-[100vw] py-20 flex flex-col justify-center items-center gap-6 bg-[#F3F5F7] ">
+    <div className="w-[100%] py-20 flex flex-col justify-center items-center gap-6 bg-[#F3F5F7] ">
       <div className="flex ">
         <svg width="40" height="30" xmlns="http://www.w3.org/2000/svg" >
           <path

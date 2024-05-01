@@ -7,3 +7,13 @@
   line-height: 1.5;
   font-weight: 400;
 }
+
+/* styles.css */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffff; /* Optional: Add background color for navbar */
+  border-bottom: 2px solid #e2e8f0; /* Optional: Add a border at the bottom of navbar */
+  padding: 10px 20px; /* Optional: Add padding to navbar */
+}

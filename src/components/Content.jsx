@@ -2,7 +2,7 @@ import React from 'react'
 
 function Content() {
   return (
-    <div className='w-[100vw] flex my-20 px-20 relative flex-col 2xl:flex-row'> 
+    <div className='w-[100%] flex my-20 px-20 relative flex-col 2xl:flex-row'> 
         <div className='w-5/12'>      
         <img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" className='absolute w-[50%] mt-20'/>
         </div>
