@@ -14,16 +14,16 @@ function Navbar() {
           <h1 className=' text-blue-600'>Home</h1>
         </Link>
         <Link to="/quote">
-          <h1>Quote</h1>
+          <h1 className=' hover:text-blue-600'>Quote</h1>
         </Link>
         <Link to="/restaurant">
-          <h1>Restaurants</h1>
+          <h1 className=' hover:text-blue-600'>Restaurants</h1>
         </Link>
         <Link to="/foods">
-          <h1>Foods</h1>
+          <h1 className=' hover:text-blue-600'>Foods</h1>
         </Link>
         <Link to="/contact">
-          <h1>Contact</h1>
+          <h1 className=' hover:text-blue-600'>Contact</h1>
         </Link>
       </div>
       <button
