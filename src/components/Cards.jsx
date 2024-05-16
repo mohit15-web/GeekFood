@@ -1,4 +1,3 @@
-import React from 'react'
 
 function Cards() {
     const cards = [
@@ -19,8 +18,8 @@ function Cards() {
   return (
     <div className='w-[82%] m-auto flex flex-wrap gap-8 my-20'>
         {
-            cards.map((card) => {
-                return <div className='w-96 h-fit'>
+            cards.map((card) => (
+                <div className='w-96 h-fit' key={card}>
                     <div className='bg-[#F3F5F7] p-6 rounded-lg shadow-lg'>
                         {card.desc}
                     </div>
@@ -34,7 +33,7 @@ function Cards() {
                         </div>
                     </div>
                 </div>
-            })
+            ))
         }
     </div>
   )

@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import "../index.css"
 
 function Navbar() {
+  const navigate = useNavigate()
   return (
     <div className='w-full flex justify-around items-center bg-white py-6 border-b-2 fixed top-0 z-50'>
       <div className='flex justify-center items-center gap-2'>
@@ -29,6 +29,9 @@ function Navbar() {
       <button
         type="button"
         className="rounded-lg bg-blue-700 px-3 py-2 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+        onClick={() => {
+          navigate("/")
+        }}
       >
         Get Started
       </button>

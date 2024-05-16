@@ -102,7 +102,7 @@ function Foods() {
               >
                 {" "}
                 <span>#{meal.strCategory}</span>{" "}
-                <span className="bg-green-500 text-white font-semibold w-[90px] h-[30px]  rounded-lg flex justify-center items-center">
+                <span className="bg-[#1D4ED8] text-white font-semibold w-[90px] h-[30px]  rounded-lg flex justify-center items-center">
                   Check
                 </span>{" "}
               </p>
