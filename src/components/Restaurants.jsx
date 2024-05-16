@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from "react";
+import  { useState } from "react";
 import data from "../Restaurant.js";
 import { ImSpoonKnife, ImLocation } from "react-icons/im";
 
 function Restaurants() {
-  // const [data, setData] = useState([])
-  // const fetchData = async () => {
-  //   let res = await fetch("https://type.fit/api/quotes")
-  //   let result = await res.json()
-  //   setData(result);
-  // }
-
-  // useEffect(() => {
-  //   fetchData()
-  // },[])
   const [search, setSearch] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 12;
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
     <>
       <div className="pt-40 py-5">
@@ -25,9 +24,11 @@ function Restaurants() {
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-      <div className=" flex flex-wrap justify-center items-center gap-8">
-        {data
-          .filter((card) => card.name.toLowerCase().includes(search.toLowerCase()))
+      <div className="flex flex-wrap justify-center items-center gap-8">
+        {currentItems
+          .filter((card) =>
+            card.name.toLowerCase().includes(search.toLowerCase())
+          )
           .map((card) => (
             <div
               key={card._id.$oid}
@@ -38,7 +39,9 @@ function Restaurants() {
               </h1>
               <div className="flex items-center gap-2 px-4 py-2">
                 <ImLocation />
-                <p>{card.address} {" ,"} {card["address line 2"]} </p>
+                <p>
+                  {card.address} {" ,"} {card["address line 2"]}{" "}
+                </p>
               </div>
               <p className="px-5 mb-10">
                 {card.outcode} {card.postcode}{" "}
@@ -54,6 +57,23 @@ function Restaurants() {
               </div>
             </div>
           ))}
+      </div>
+      <div className="flex justify-center mt-4">
+        <ul className="flex gap-2 text-2xl py-5">
+          {Array(Math.ceil(data.length / itemsPerPage))
+            .fill()
+            .map((_, index) => (
+              <li
+                key={index}
+                className={`cursor-pointer ${
+                  currentPage === index + 1 ? "text-blue-500 font-bold" : ""
+                }`}
+                onClick={() => paginate(index + 1)}
+              >
+                {index + 1}
+              </li>
+            ))}
+        </ul>
       </div>
     </>
   );

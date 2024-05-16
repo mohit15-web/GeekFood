@@ -1,4 +1,3 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client';
 import Footer from "./components/Footer";
 import Home from "./components/Home";
@@ -9,6 +8,7 @@ import "./index.css"
 import Quote from './components/Quote';
 import Restaurants from './components/Restaurants';
 import Foods from './components/Foods';
+import FoodDetails from './components/FoodDetails';
 
 
 function App() {
@@ -46,6 +46,10 @@ const router = createBrowserRouter([
       {
         path:"/contact",
         element:<Contact />
+      },
+      {
+        path:"/fooddetail/:id",
+        element:<FoodDetails />
       },
       
     ],    
